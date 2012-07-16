@@ -1,0 +1,9 @@
+# config/config.yml
+development:
+  upload_path: uploads/
+
+test:
+  upload_path:
+
+production:
+  upload_path:

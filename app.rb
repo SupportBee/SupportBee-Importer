@@ -6,7 +6,9 @@ module SupportBee
   class Importer < Sinatra::Base
   
     register Sinatra::Initializers
-  
+
+    set :root, File.dirname(__FILE__)
+
     post '/mailgun_mime' do
       puts params
       "OK"
