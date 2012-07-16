@@ -11,7 +11,8 @@ module SupportBee
     set :root, File.dirname(__FILE__)
 
     post '/mailgun_mime' do
-      puts params
+      @mailgun = SupportBee::Mailgun.new(params)
+      @mailgun.import
       "OK"
     end
   
