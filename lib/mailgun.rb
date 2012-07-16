@@ -26,6 +26,13 @@ module SupportBee
 			file.close
 		end
 
+    def backup
+    	_file_path = file_path(backup_filename)
+    	file = File.new(_file_path, "w")
+    	file.write(@params)
+    	file.close
+    end
+
 		def get_file
 			_file_path = file_path(filename)
 			raise SupportBee::Errors::FileExists if File.exists?(_file_path)
@@ -42,6 +49,10 @@ module SupportBee
 
 		def filename
 			"#{Time.parse(@params['Date']).strftime('%Y%m%d%H%M%S')}_#{@params['signature']}.eml"
+		end
+
+		def backup_filename
+			"#{filename}.params"
 		end
 	end
 end

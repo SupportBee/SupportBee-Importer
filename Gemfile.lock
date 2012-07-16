@@ -2,7 +2,10 @@ GEM
   remote: http://rubygems.org/
   specs:
     diff-lcs (1.1.3)
+    exceptional (2.0.32)
+      rack
     flexmock (0.9.0)
+    json (1.7.3)
     rack (1.4.1)
     rack-protection (1.2.0)
       rack
@@ -27,7 +30,9 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  exceptional
   flexmock
+  json
   rspec
   shotgun
   sinatra

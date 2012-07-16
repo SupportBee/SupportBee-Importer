@@ -9,10 +9,20 @@ module SupportBee
     register Sinatra::Initializers
 
     set :root, File.dirname(__FILE__)
+    set :raise_errors, true
+
+    get '/' do
+    end
 
     post '/mailgun_mime' do
-      @mailgun = SupportBee::Mailgun.new(params)
-      @mailgun.import
+    	mailgun = SupportBee::Mailgun.new(params)
+    	begin
+      	mailgun.import
+      rescue Exception => e
+      	Exceptional.context(:backup_filename => mailgun.backup_filename)
+      	Exceptional.handle(e, "MAILGUN IMPORT FAILED: #{SupportBee::Importer.environment} ")
+      	mailgun.backup
+      end
       "OK"
     end
   

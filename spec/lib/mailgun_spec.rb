@@ -55,5 +55,14 @@ describe SupportBee::Mailgun do
 				lambda { @mailgun.import }.should raise_error(SupportBee::Errors::VerificationFailed)
 			end
 		end
+
+		context "Backup" do
+			it "should dump params into a file" do
+				@params['signature'] = "wow"
+				mailgun = SupportBee::Mailgun.new(@params)
+				mailgun.backup
+				File.read(@mailgun.file_path("#{@mailgun.filename}.params")).should == @params.to_s
+			end
+		end
 	end
 end
