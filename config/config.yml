@@ -1,9 +1,12 @@
 # config/config.yml
 development:
   upload_path: uploads/
+  mailgun_api_key: key-5nklqqzwrwc6y9n15w18-a9ytvpkb197
 
 test:
   upload_path:
+  mailgun_api_key: key-5nklqqzwrwc6y9n15w18-a9ytvpkb197
 
 production:
   upload_path:
+  mailgun_api_key:

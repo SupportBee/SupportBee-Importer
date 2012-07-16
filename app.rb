@@ -1,6 +1,7 @@
+Dir["#{File.dirname(__FILE__)}/lib/**/*.rb"].each { |f| load(f) }
+
 require 'sinatra/base'
 require 'sinatra-initializers'
-require 'json'
 
 module SupportBee
   class Importer < Sinatra::Base
