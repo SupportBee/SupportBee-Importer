@@ -40,7 +40,7 @@ describe SupportBee::Mailgun do
 
 			it "should have the right content" do
 				@mailgun.create_file
-				File.read(@mailgun.file_path(@mailgun.filename)).should == @params['body-mime']
+				File.read(@mailgun.file_path(@mailgun.filename)).should == "Delivered-To: #{@params['recipient']}\r\n#{@params['body-mime']}"
 			end
 		end
 

@@ -40,7 +40,7 @@ module SupportBee
 		end
 
 		def write_to_file(file_handle)
-			file_handle.write(@params['body-mime'])
+			file_handle.write(mail_body)
 		end
 
 		def file_path(file_name)
@@ -53,6 +53,10 @@ module SupportBee
 
 		def backup_filename
 			"#{filename}.params"
+		end
+
+		def mail_body
+			"Delivered-To: #{@params['recipient']}\r\n#{@params['body-mime']}"
 		end
 	end
 end
