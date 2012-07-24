@@ -10,6 +10,8 @@ module SupportBee
 
     set :root, File.dirname(__FILE__)
     set :raise_errors, true
+    set :logging, true
+    set :dump_errors, true
 
     get '/' do
     end
