@@ -44,7 +44,7 @@ module SupportBee
 		end
 
 		def file_path(file_name)
-			"#{File.expand_path(APP_CONFIG['upload_path'])}/#{file_name}"
+			"#{File.expand_path(APP_CONFIG['mail_storage_dir'])}/#{file_name}"
 		end
 
 		def filename

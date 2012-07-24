@@ -30,7 +30,7 @@ describe SupportBee::Mailgun do
 		context "File creation" do
 			it "should create a file in the right location" do
 				file_name = "20120716140428_ad8dcacc75424801a5275ee67862c53b7f1004a5fd639a125f7d493b4904373e.eml"
-				@mailgun.file_path(file_name).should == "#{File.expand_path(APP_CONFIG['upload_path'])}/#{file_name}"
+				@mailgun.file_path(file_name).should == "#{File.expand_path(APP_CONFIG['mail_storage_dir'])}/#{file_name}"
 			end
 
 			it "should raise SupportBee::Errors::FileExists if file exists" do
