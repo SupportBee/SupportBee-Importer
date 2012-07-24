@@ -14,9 +14,11 @@ module SupportBee
     set :dump_errors, true
 
     get '/' do
+      "OK"
     end
 
     post '/mailgun_mime' do
+      puts params
     	mailgun = SupportBee::Mailgun.new(params)
     	begin
       	mailgun.import
