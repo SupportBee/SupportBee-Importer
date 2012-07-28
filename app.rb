@@ -10,11 +10,15 @@ module SupportBee
 
     set :root, File.dirname(__FILE__)
     set :raise_errors, true
+    set :logging, true
+    set :dump_errors, true
 
     get '/' do
+      "OK"
     end
 
     post '/mailgun_mime' do
+      puts params
     	mailgun = SupportBee::Mailgun.new(params)
     	begin
       	mailgun.import

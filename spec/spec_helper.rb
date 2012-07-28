@@ -12,7 +12,7 @@ set :logging, false
 RSpec.configure do |config|
 	config.mock_with :flexmock
 	config.before :each do
-		upload_path = File.expand_path(APP_CONFIG['upload_path'])
+		upload_path = File.expand_path(APP_CONFIG['mail_storage_dir'])
 		FileUtils.remove_dir(upload_path, true) if File.exists?(upload_path)
 		FileUtils.mkpath(upload_path)
 	end
