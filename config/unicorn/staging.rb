@@ -20,7 +20,7 @@ preload_app true
 
 # nuke workers after 30 seconds instead of 60 seconds (the default)
 #timeout 180
-listen "0.0.0.0:4000"
+listen 4000
 
 WORKING_DIR = "/home/rails/apps/supportbee_importer/current"
 SHARED_DIR = "/home/rails/apps/supportbee_importer/shared"
