@@ -75,7 +75,7 @@ namespace(:supportbee_importer) do
   task :config do
     %w(sb_config.yml).each do |file|
       run <<-CMD
-        ln -nfs #{shared_path}/system/#{file} #{release_path}/config/#{file}
+        ln -nfs /home/rails/apps/supportbee_app/shared/system/#{file} #{release_path}/config/#{file}
       CMD
     end
   end
